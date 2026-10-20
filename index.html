@@ -1,0 +1,39 @@
+<!doctype html><html lang="fr-CA"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#174633"><title>Calendrier de l’Avent | Créations Sublimation</title><style>
+:root{font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:#173e31;background:#f8f5ed}*{box-sizing:border-box}body{margin:0}.wrap{max-width:800px;margin:auto;padding:18px}.hero{background:linear-gradient(140deg,#123e30,#24684b);color:white;text-align:center;padding:32px 18px;border-radius:20px;box-shadow:0 8px 22px #123e3024}.eyebrow{letter-spacing:2px;font-size:12px;color:#f2dba4}h1{font-family:Georgia,serif;font-size:clamp(30px,6vw,49px);margin:12px 0}h2{font-size:23px}.gold{color:#ffe3a0}.intro{font-size:14px;line-height:1.6}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:20px 0}.door{border:2px solid #c7aa69;border-radius:14px;min-height:100px;background:linear-gradient(150deg,#2c7957,#15503a);color:white;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;box-shadow:0 4px 0 #103b2a}.door strong{font-size:27px}.door span{font-size:19px}.door:disabled{background:#e7e6dd;border-color:#d1d0c8;box-shadow:none;color:#8a8d88;cursor:default}.door.opened{background:#f4dfac;border-color:#b28c40;color:#594321;box-shadow:none}.door:focus-visible{outline:3px solid #db9535;outline-offset:3px}.panel{background:white;border:1px solid #e3d9c7;border-radius:16px;text-align:center;padding:24px 18px;min-height:175px}.panel h2{margin:8px 0}.muted{color:#65756d;font-size:13px;line-height:1.6}.status{text-align:center;font-size:14px;margin:17px 0 0}.foot{text-align:center;padding:15px}.chip{display:inline-block;background:#f6e7c6;color:#61481d;border-radius:30px;padding:5px 12px;font-size:12px;font-weight:bold}.note{border-left:4px solid #b18c46;padding:12px;background:#f2ebda;font-size:13px;line-height:1.6;margin-top:20px}@media(max-width:420px){.wrap{padding:10px}.grid{gap:7px}.door{min-height:76px}.door strong{font-size:23px}.door span{font-size:15px}}
+</style></head><body><main class="wrap"><header class="hero"><div>✨ 🎄 🎁 ✨</div><p class="eyebrow">CRÉATIONS SUBLIMATION</p><h1>Calendrier de l’Avent</h1><p>1er au 24 décembre 2026</p><p class="gold"><strong>24 surprises • 35 $ en cartes-cadeaux garanties</strong></p><p class="intro">Une nouvelle fenêtre s’ouvre chaque jour à minuit, heure du Québec.</p></header><p id="status" class="status" aria-live="polite"></p><section id="doors" class="grid" aria-label="Fenêtres du calendrier"></section><section id="result" class="panel" aria-live="polite"><div style="font-size:30px">🎁</div><h2>Une surprise chaque jour !</h2><p class="muted">Cliquez sur une fenêtre déverrouillée pour découvrir votre offre.</p></section><aside class="note"><strong>Conditions :</strong> Les promotions sont valides seulement à leur date, de 0 h à 23 h 59 (heure du Québec). Les cartes-cadeaux de 10 $ et 25 $ sont garanties pour chaque acheteur, utilisables dès leur découverte, cumulables et sans expiration. Pour réclamer une offre ou une carte-cadeau, communiquez avec Créations Sublimation et fournissez votre preuve d’achat du calendrier. Les offres sur l’inventaire sont sous réserve des stocks disponibles. Les cartes-cadeaux ne sont pas générées automatiquement par ce site.</aside><p class="foot muted">Créations Sublimation • Calendrier de l’Avent 2026</p></main><script>
+'use strict';
+const offers=[
+['10 % de rabais','Sur une commande.'],
+['Tasse à 7 $','Tasse de notre inventaire. Rabais de 3 $.'],
+['2 stylos pour 3 $','Deux stylos de notre inventaire, normalement 6 $. Rabais de 3 $.'],
+['Gourde 20 oz à 15 $','Sur une gourde de notre inventaire. Rabais de 5 $.'],
+['5 $ de rabais','Sur une commande de 30 $ et plus.'],
+['Serviette de Noël à 9 $','Serviette à vaisselle de Noël de notre inventaire. Rabais de 3 $.'],
+['Remise fidélité de 6 %','Remise fidélité doublée pour cette journée.'],
+['Sac réutilisable à 9 $','De notre inventaire. Rabais de 3 $.'],
+['15 % de rabais','Sur une commande.'],
+['Carte-cadeau de 10 $ 🎁','Garantie pour chaque client ayant acheté le calendrier. Utilisable dès sa découverte, sans expiration.'],
+['Gourde enfant à 15 $','De notre inventaire. Rabais de 5 $.'],
+['2 personnalisations pour le prix d’une','Sur deux exemplaires du même article.'],
+['La Ville en Folie à 55 $','5 $ de rabais sur le jeu normalement à 60 $.'],
+['Tasse personnalisée à 5 $','Rabais de 5 $.'],
+['5 $ de rabais','Sur une commande de 25 $ et plus.'],
+['2 stylos gratuits','De notre inventaire, avec achat.'],
+['15 % de rabais','Sur les serviettes à vaisselle de notre inventaire.'],
+['Sac réutilisable à 8 $','De notre inventaire. Rabais de 4 $.'],
+['Remise fidélité de 6 %','Remise fidélité doublée pour cette journée.'],
+['20 % de rabais','Sur un article au choix.'],
+['1 article gratuit 🎁','Avec l’achat de notre jeu La Ville en Folie. Article gratuit admissible à confirmer avec Créations Sublimation.'],
+['10 % de rabais','Sur une commande.'],
+['Surprise gratuite 🎁','Avec l’achat d’un article personnalisé.'],
+['Carte-cadeau de 25 $ 🎄','Garantie pour chaque client ayant acheté le calendrier. Utilisable dès sa découverte, sans expiration.']
+];
+const order=[7,2,19,12,24,4,15,9,1,21,6,17,13,3,22,10,18,5,16,8,23,11,20,14];
+const doors=document.getElementById('doors'),result=document.getElementById('result'),status=document.getElementById('status');
+const formatter=new Intl.DateTimeFormat('en-CA',{timeZone:'America/Toronto',year:'numeric',month:'numeric',day:'numeric'});
+function dateInfo(){let p=Object.fromEntries(formatter.formatToParts(new Date()).filter(x=>x.type!=='literal').map(x=>[x.type,Number(x.value)]));return p;}
+function maxDay(){let d=dateInfo();if(d.year<2026||(d.year===2026&&d.month<12))return 0;if(d.year>2026||(d.year===2026&&d.month>12))return 24;return Math.min(d.day,24)}
+let opened=new Set();try{opened=new Set(JSON.parse(localStorage.getItem('cs-avent-2026-opened')||'[]'))}catch(e){}
+function show(day){const card=day===10||day===24,expired=maxDay()>day&&!card;result.replaceChildren();const symbol=document.createElement('div');symbol.style.fontSize='32px';symbol.textContent=card?'🎁':'✨';const label=document.createElement('p');label.className='chip';label.textContent=day+' décembre';const title=document.createElement('h2');title.textContent=offers[day-1][0];const description=document.createElement('p');description.textContent=offers[day-1][1];const notice=document.createElement('p');notice.className='muted';notice.textContent=card?'Carte-cadeau garantie • Sans expiration':expired?'Cette promotion de 24 h est expirée.':'Promotion valide aujourd’hui jusqu’à 23 h 59.';result.append(symbol,label,title,description,notice)}
+function render(){let max=maxDay();status.textContent=max===0?'Ouverture le 1er décembre 2026':max===24?'Les 24 fenêtres sont déverrouillées !':`Nous sommes le ${max} décembre : ouvrez votre surprise !`;doors.replaceChildren();order.forEach(day=>{let b=document.createElement('button');b.type='button';b.className='door'+(opened.has(day)?' opened':'');b.disabled=day>max;b.setAttribute('aria-label',`Fenêtre ${day} ${day>max?'verrouillée':'accessible'}`);const ico=document.createElement('span');ico.textContent=day>max?'🔒':opened.has(day)?'🎁':'✦';const num=document.createElement('strong');num.textContent=day;b.append(ico,num);b.addEventListener('click',()=>{opened.add(day);try{localStorage.setItem('cs-avent-2026-opened',JSON.stringify([...opened]))}catch(e){}show(day);render()});doors.appendChild(b)})}render();
+</script></body></html>
